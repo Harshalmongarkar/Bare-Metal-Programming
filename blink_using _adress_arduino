@@ -5,11 +5,10 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  volatile byte* a = 0x25;
-  *a = 32;
+  *((volatile byte*) 0x25) = 32;
   
-  for (long i=0 ; i<1000000;i++){*a = 32;}
-  *a = 0;
-  for (long i=0 ; i<1000000;i++){*a = 0;}
+  for (long i=0 ; i<1000000;i++){*((volatile byte*) 0x25) = 32;}
+  *((volatile byte*) 0x25) = 0;
+  for (long i=0 ; i<1000000;i++){*((volatile byte*) 0x25) = 0;}
 
 }
