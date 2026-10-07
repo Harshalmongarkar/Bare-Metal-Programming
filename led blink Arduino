@@ -1,0 +1,14 @@
+void setup() {
+  // put your setup code here, to run once:
+// output = 1 and input = 0
+  DDRB = 32; // 0010000 sets PB5 as output
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  PORTB = 32;
+  delay(1000);
+  PORTB = 0 ;
+  delay(1000);
+
+}
