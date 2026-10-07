@@ -1,7 +1,8 @@
 #define a*((volatile byte*) 0x25)
+#define b*((volatile byte*) 0x24)
 void setup() {
   // put your setup code here, to run once:
-  DDRB = 32; // 0010000 sets PB5 as output
+  b = 32; // 0010000 sets PB5 as output
 }
 
 void loop() {
