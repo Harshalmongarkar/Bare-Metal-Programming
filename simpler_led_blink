@@ -1,0 +1,15 @@
+#define a*((volatile byte*) 0x25)
+void setup() {
+  // put your setup code here, to run once:
+  DDRB = 32; // 0010000 sets PB5 as output
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  a = 32;
+  
+  for (long i=0 ; i<1000000;i++){a = 32;}
+  a = 0;
+  for (long i=0 ; i<1000000;i++){a = 0;}
+
+}
